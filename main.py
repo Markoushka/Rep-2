@@ -1,16 +1,16 @@
-class Figura:
+result = []
+def divider(a, b):
+ if a < b:
+        raise ValueError
+ if b > 100:
+        raise IndexError
+ return a/b
+data = {10: 2, 2: 5, "123": 4, 18: 0, []: 8:4}
+for key in data:
+    try:
+        res = divider(key, data[key])
+        result.append(res)
+    except Exception as error:
+        print(type(error))
 
-    def __init__(self, color, chislo_p, coordinaty):
-        self.color = color
-        self.chislo_p = chislo_p
-        self.coordinaty = coordinaty
-
-    def ShowInfo(self):
-        print("Color: ", self.color, "chislo_p: ", self.chislo_p, "Coordinaty:", self.coordinaty)
-
-class Pryamougolnik(Figura):
-    def __init__(self, color, chislo_p, coordinaty):
-        super().__init__(color, chislo_p, coordinaty)
-
-myPryamougolnik = Pryamougolnik("Seroburomalinoviy", 3.14, 358.256)
-myPryamougolnik.ShowInfo()
+print(result)
